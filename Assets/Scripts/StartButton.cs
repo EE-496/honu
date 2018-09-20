@@ -10,4 +10,13 @@ public class StartButton : MonoBehaviour {
 		Manager.Instance.activeMiniGame = 1;
 	}
 
+	void Start() {
+		if(SaveLoad.Load()){
+			Game.current = SaveLoad.savedGame;
+			Debug.Log("Highscore: " + Game.current.highScore);
+		} else {
+			Game.current = new Game();
+		}
+	}
+
 }
