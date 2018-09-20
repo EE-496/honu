@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ProgressBar : MonoBehaviour {
 
     public int time = 10;
-	public float progress = Manager.Instance.counter / 10;
+	public float progress;
     public float speed = 0;
     bool check = false;
     public Vector2 position = new Vector2(20, 40);
@@ -13,9 +13,20 @@ public class ProgressBar : MonoBehaviour {
     public Texture2D progress_empty_Image;
     public Texture2D progress_full_Image;
 	
+    void Start() {
+        if(Manager.Instance.counter != null){
+            progress = Manager.Instance.counter / 10;
+        }
+    }
+
+    // Update is called once per frame
+	void Update () {
+        if (check == false) {
+            StartCoroutine(delay());
+        }
+	}
+
     void OnGUI () {
-		var progressBarEmpty = progress_empty_Image;
-		var progressBarFull = progress_full_Image;
         // draw the background:
 		GUI.BeginGroup(new Rect(position.x, position.y, size.x, size.y));
 		    GUI.Box(new Rect(0, 0, size.x, size.y), progress_empty_Image);
@@ -27,13 +38,6 @@ public class ProgressBar : MonoBehaviour {
 
 		GUI.EndGroup();
     }
-
-	// Update is called once per frame
-	void Update () {
-        if (check == false) {
-            StartCoroutine(delay());
-        }
-	}
 
     IEnumerator delay() {
         check = true;
