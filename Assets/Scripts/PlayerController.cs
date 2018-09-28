@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
         rb2d.velocity = movement*speed;
 
         if(ReadMashedKeys(successCount)){
-            Debug.Log("You Win!");
+            Manager.Instance.successCurrentGame = 1;
         }
         else if(Manager.Instance.counter >= 10){
             Debug.Log("You Lose!");
@@ -46,6 +46,13 @@ public class PlayerController : MonoBehaviour {
             dCount++;
             Debug.Log("D " + dCount);
             lastPressed = KeyCode.D;
+        } else if (Input.GetKeyDown(KeyCode.W)) {
+            aCount++;
+            Game.current.highScore++;
+            Debug.Log("Highscore: " + Game.current.highScore);
+        } else if (Input.GetKeyDown(KeyCode.Escape)) {
+            SaveLoad.Save();
+            Debug.Log("Saved! ");
         }
 
         if(aCount + dCount >= targetPresses){
