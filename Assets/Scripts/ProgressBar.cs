@@ -35,7 +35,7 @@ public class ProgressBar : MonoBehaviour
 		// draw the background
 		GUI.DrawTexture(new Rect(position.x, position.y, size.x, size.y), progress_empty_Image);
 		// fill with appropriate progress
-		GUI.DrawTexture(new Rect(position.x, position.y, size.x * progress, size.y), progress_full_Image);
+        GUI.DrawTexture(new Rect(position.x, position.y, size.x * (1-progress), size.y), progress_full_Image);
 	}
 
 }

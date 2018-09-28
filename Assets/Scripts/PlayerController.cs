@@ -6,13 +6,18 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public int successCount;
     private Rigidbody2D rb2d;
+	public AudioClip musicClip;
+	public AudioSource source;
 
     private KeyCode lastPressed = KeyCode.W;
     private int aCount;
     private int dCount;
 
     void Start(){
-        rb2d = GetComponent<Rigidbody2D>();
+		source.clip = musicClip;
+        if(Manager.Instance.music)
+            source.Play();
+		rb2d = GetComponent<Rigidbody2D>();
         aCount = dCount = 0;
         Debug.Log(Manager.Instance.myGlobalVar);
     }
