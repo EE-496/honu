@@ -9,7 +9,8 @@ using UnityEngine;
     public float counter;
     public int activeMiniGame = 0;
     public int successCurrentGame = 0;
-    public bool music = false;
+    public bool music = true;
+    public bool sound = true;
 
 	void Start() {
 		counter = Time.timeSinceLevelLoad;

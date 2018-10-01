@@ -7,16 +7,19 @@ public class PlayerController : MonoBehaviour {
     public int successCount;
     private Rigidbody2D rb2d;
 	public AudioClip musicClip;
-	public AudioSource source;
+	public AudioSource musicSource;
+    public AudioClip soundClip;
+    public AudioSource soundSource;
 
     private KeyCode lastPressed = KeyCode.W;
     private int aCount;
     private int dCount;
 
     void Start(){
-		source.clip = musicClip;
+		musicSource.clip = musicClip;
+        soundSource.clip = soundClip;
         if(Manager.Instance.music)
-            source.Play();
+            musicSource.Play();
 		rb2d = GetComponent<Rigidbody2D>();
         aCount = dCount = 0;
         Debug.Log(Manager.Instance.myGlobalVar);
@@ -39,11 +42,15 @@ public class PlayerController : MonoBehaviour {
     bool ReadMashedKeys(int targetPresses) {
         if (Input.GetKeyDown(KeyCode.A) && lastPressed != KeyCode.A) {
             aCount++;
+            if (Manager.Instance.sound)
+                soundSource.Play();
             Debug.Log("A " + aCount);
             lastPressed = KeyCode.A;
         }
         else if(Input.GetKeyDown(KeyCode.D) && lastPressed != KeyCode.D) {
             dCount++;
+			if (Manager.Instance.sound)
+				soundSource.Play();
             Debug.Log("D " + dCount);
             lastPressed = KeyCode.D;
         } else if (Input.GetKeyDown(KeyCode.W)) {
