@@ -17,6 +17,7 @@ public class SpinObject : MonoBehaviour {
     private float glPrFltCurrentRotation;
 	private float glPrFloatRotation;
 	private float glPrFltQuarterRotation;
+    private float time = 10;
 
 
 	void Start()
@@ -33,10 +34,16 @@ public class SpinObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
-		RotateThis();
+        RotateThis();
         if (rotate)
         {
             CountRotations();
+        }
+
+        if (Manager.Instance.counter >= time) 
+        {
+            rotate = false;
+            Debug.Log("You Lose");
         }
 	}
 
