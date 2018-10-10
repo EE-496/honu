@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public float speed;
@@ -18,11 +19,10 @@ public class PlayerController : MonoBehaviour {
     void Start(){
 		musicSource.clip = musicClip;
         soundSource.clip = soundClip;
-        if(Manager.Instance.music)
-            musicSource.Play();
+        if(Manager.Instance.music) musicSource.Play();
 		rb2d = GetComponent<Rigidbody2D>();
         aCount = dCount = 0;
-        Debug.Log(Manager.Instance.myGlobalVar);
+        Manager.Instance.activeMiniGame = Random.Range(0, Constants.miniGameCount);
     }
 
     void Update(){
@@ -34,16 +34,15 @@ public class PlayerController : MonoBehaviour {
         if(ReadMashedKeys(successCount)){
             Manager.Instance.successCurrentGame = 1;
         }
-        else if(Manager.Instance.counter >= 10){
-            Debug.Log("You Lose!");
+        else if(Manager.Instance.counter >= Constants.timeForGame){
+            SceneManager.LoadScene("GameOver");
         }
     }
 
     bool ReadMashedKeys(int targetPresses) {
         if (Input.GetKeyDown(KeyCode.A) && lastPressed != KeyCode.A) {
             aCount++;
-            if (Manager.Instance.sound)
-                soundSource.Play();
+            if (Manager.Instance.sound) soundSource.Play();
             Debug.Log("A " + aCount);
             lastPressed = KeyCode.A;
         }

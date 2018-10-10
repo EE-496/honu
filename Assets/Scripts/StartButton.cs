@@ -7,7 +7,6 @@ public class StartButton : MonoBehaviour {
 
 	public void changeScene(string sceneName) {
 		SceneManager.LoadScene(sceneName);
-		Manager.Instance.activeMiniGame = 1;
 	}
 
 	void Start() {

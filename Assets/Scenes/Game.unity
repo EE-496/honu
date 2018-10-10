@@ -341,7 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e3ecc1b183e24f439b768bee71321ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
   progress: 0
   position: {x: 20, y: 40}
   size: {x: 200, y: 20}

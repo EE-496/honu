@@ -4,8 +4,12 @@ using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
- public class Manager : Singleton<Manager> {
-    public string myGlobalVar = "whatever";
+static class Constants {
+    public const int miniGameCount = 2;
+    public const float timeForGame = 5.0f;
+}
+
+public class Manager : Singleton<Manager> {
     public float counter;
     public int activeMiniGame = 0;
     public int successCurrentGame = 0;
@@ -18,6 +22,8 @@ using UnityEngine;
 
 	void Update(){
 		counter = Time.timeSinceLevelLoad;
-		if(successCurrentGame != 0) Debug.Log("Winner");
+		if(successCurrentGame != 0) {
+            Debug.Log("Winner");
+        }
 	}
  }
