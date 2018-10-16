@@ -12,7 +12,6 @@ public class GameOver : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(Manager.Instance.counter);
 		if(Manager.Instance.counter >= Constants.timeForGame){
             SceneManager.LoadScene("MainMenu");
             Debug.Log("You Lose!");

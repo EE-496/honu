@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour {
+	public Text highScoreLabel;
 
 	public void changeScene(string sceneName) {
 		SceneManager.LoadScene(sceneName);
@@ -12,9 +14,10 @@ public class StartButton : MonoBehaviour {
 	void Start() {
 		if(SaveLoad.Load()){
 			Game.current = SaveLoad.savedGame;
-			Debug.Log("Highscore: " + Game.current.highScore);
+			highScoreLabel.text = Game.current.highScore.ToString();
 		} else {
 			Game.current = new Game();
+			highScoreLabel.text = "0";
 		}
 	}
 
