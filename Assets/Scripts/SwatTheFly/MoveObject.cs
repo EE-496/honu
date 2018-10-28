@@ -14,13 +14,13 @@ public class MoveObject : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		// Vector2 force = new Vector2(Random.Range(-25.0f,25.0f),Random.Range(-25.0f,25.0f));
-        // rb2D.AddForce(force);
-		// Vector3 center3 = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2, Screen.height/2, Camera.main.nearClipPlane)); 
-		// Vector2 center2 = new Vector2(center3.x, center3.y);
-		// Vector2 gameObjectPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-		// Vector2 direction = new Vector2(center2.x - gameObjectPos.x, center2.y - gameObjectPos.y);
-		// rb2D.AddForce(direction);
+		Vector2 force = new Vector2(Random.Range(-25.0f,25.0f),Random.Range(-25.0f,25.0f));
+        rb2D.AddForce(force);
+		Vector3 center3 = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2, Screen.height/2, Camera.main.nearClipPlane)); 
+		Vector2 center2 = new Vector2(center3.x, center3.y);
+		Vector2 gameObjectPos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+		Vector2 direction = new Vector2(center2.x - gameObjectPos.x, center2.y - gameObjectPos.y);
+		rb2D.AddForce(direction);
 
 		// Keep inside the frame
 		Vector3 pos = Camera.main.WorldToViewportPoint (gameObject.transform.position);
