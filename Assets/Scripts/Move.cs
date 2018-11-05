@@ -36,6 +36,7 @@ public class Move : MonoBehaviour {
             }
             else
             {
+                Debug.Log("Lose");
                 //move to lose screen
             }
         }
