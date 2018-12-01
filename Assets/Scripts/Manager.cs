@@ -23,7 +23,7 @@ public class Manager : Singleton<Manager> {
 	void Update(){
 		counter = Time.timeSinceLevelLoad;
 		if(successCurrentGame != 0) {
-            Debug.Log("Winner");
+            // Debug.Log("Winner");
         }
 	}
  }

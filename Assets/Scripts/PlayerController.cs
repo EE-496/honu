@@ -54,11 +54,6 @@ public class PlayerController : MonoBehaviour {
             lastPressed = KeyCode.D;
         } else if (Input.GetKeyDown(KeyCode.W)) {
             aCount++;
-            Game.current.highScore++;
-            Debug.Log("Highscore: " + Game.current.highScore);
-        } else if (Input.GetKeyDown(KeyCode.Escape)) {
-            SaveLoad.Save();
-            Debug.Log("Saved! ");
         }
 
         if(aCount + dCount >= targetPresses){
