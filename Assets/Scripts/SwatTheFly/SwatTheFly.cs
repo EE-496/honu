@@ -8,13 +8,8 @@ public class SwatTheFly : MonoBehaviour {
 
 	void Update() {
 		if(Manager.Instance.successCurrentGame == 3) {
-			GameObject checkMark = new GameObject();
-			if(Manager.Instance.counter >= Constants.timeForGame) {
-				SceneManager.LoadScene("MainMenu");
-			}
+			// GameObject checkMark = new GameObject();
 		}
-		else if(Manager.Instance.counter >= Constants.timeForGame) {
-			SceneManager.LoadScene("GameOver");
-		}
+		
 	}	
 }

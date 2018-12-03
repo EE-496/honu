@@ -503,5 +503,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2e01b0eec63d44280ddf2ad674e45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sequenceLength: 10
+  sequenceLength: 5
   gameString: {fileID: 215646681}

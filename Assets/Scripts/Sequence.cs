@@ -51,7 +51,7 @@ public class Sequence : MonoBehaviour {
 	}
 
 	bool checkSequence() {
-		if(progressInSequence == sequenceLength-1) return true;
+		if(progressInSequence == sequenceLength) return true;
 		return false;
 	}
 }

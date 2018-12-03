@@ -8,17 +8,19 @@ public class StartButton : MonoBehaviour {
 	public Text highScoreLabel;
 
 	public void changeScene(string sceneName) {
-		SceneManager.LoadScene(sceneName);
+		Game.current.highScore += 1;
+		SceneManager.LoadScene(Manager.Instance.games[UnityEngine.Random.Range(0, Manager.Instance.games.Length)]);
 	}
 
 	void Start() {
 		if(SaveLoad.Load()){
 			Game.current = SaveLoad.savedGame;
-			highScoreLabel.text = Game.current.highScore.ToString();
-		} else {
+		} else if (Game.current == null) {
 			Game.current = new Game();
-			highScoreLabel.text = "0";
+			Game.current.highScore = 0;
 		}
+		highScoreLabel.text = Game.current.highScore.ToString();
+		Game.current.highScore = 0;
 	}
 
 }

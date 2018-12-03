@@ -14,4 +14,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 9ce4b37b09c4a1e40b7c780e5246c77a
+  - enabled: 1
+    path: Assets/Scenes/Drawing.unity
+    guid: 72526b540c6df4fae9cc80dc6d168b56
+  - enabled: 1
+    path: Assets/Scenes/DragGame.unity
+    guid: a805e3447af6b46dfb61301e16fc5162
+  - enabled: 1
+    path: Assets/Scenes/SequenceGame.unity
+    guid: baa4fe5683fa54542875687918abb9b2
+  - enabled: 1
+    path: Assets/Scenes/SpinningGame.unity
+    guid: 4a4aae39b79a74b41994f6a19a839ce2
+  - enabled: 1
+    path: Assets/Scenes/SwatTheFly.unity
+    guid: dbb45e66309d188469d3fd0722217f54
+  - enabled: 1
+    path: Assets/Scenes/Timing.unity
+    guid: ece88a70a23a4483388aa249b9142faf
+  - enabled: 1
+    path: Assets/Scenes/DuelMode.unity
+    guid: b7354108fbdb9492082ecdad78f0d6b9
   m_configObjects: {}

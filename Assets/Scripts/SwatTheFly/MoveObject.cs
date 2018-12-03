@@ -7,7 +7,7 @@ public class MoveObject : MonoBehaviour {
 
 	private Rigidbody2D rb2D;
 	private bool clicked = false;
-
+	private int clicks = 0;
 	// Use this for initialization
 	void Start () {
 		rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -31,8 +31,8 @@ public class MoveObject : MonoBehaviour {
 
 	void OnMouseDown() {
 		if(!clicked) {
-			Debug.Log("HERE");
-    		Manager.Instance.successCurrentGame += 1;
+			clicks++;
+    		if(clicks == 3) Manager.Instance.successCurrentGame += 1;
 			clicked = true;
 		}
 	}
