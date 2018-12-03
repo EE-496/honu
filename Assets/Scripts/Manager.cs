@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 static class Constants {
-    public const int miniGameCount = 2;
+    public const int miniGameCount = 6;
     public const float timeForGame = 5.0f;
 }
 

@@ -35,5 +35,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-.DS_STORE
 
+.DS_STORE
+Assets/ML-Agents/Examples
+Assets/ML-Agents/Plugins
