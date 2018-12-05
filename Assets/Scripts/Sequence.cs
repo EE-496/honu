@@ -20,6 +20,7 @@ public class Sequence : MonoBehaviour {
 		for(int i = 0; i < sequenceLength; i++){
 			gameString.text = gameString.text + sequence[i].ToString().ToUpper() + " ";
 		}
+		Manager.Instance.successCurrentGame = 0;
 	}
 	
 	// Update is called once per frame

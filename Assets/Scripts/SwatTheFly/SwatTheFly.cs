@@ -8,6 +8,10 @@ public class SwatTheFly : MonoBehaviour {
 	public MoveObject fly2;
 	public MoveObject fly3;
 
+	void Start(){
+            Manager.Instance.successCurrentGame = 0;
+	}
+
 	void Update() {
 		if(fly1.clicks == 1 && fly2.clicks == 1  && fly3.clicks == 1) {
     		Manager.Instance.successCurrentGame = 1;

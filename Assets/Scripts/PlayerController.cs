@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 		rb2d = GetComponent<Rigidbody2D>();
         aCount = dCount = 0;
         Manager.Instance.activeMiniGame = Random.Range(0, Constants.miniGameCount);
+        Manager.Instance.successCurrentGame = 0;	
     }
 
     void Update(){
@@ -37,14 +38,12 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.A) && lastPressed != KeyCode.A) {
             aCount++;
             if (Manager.Instance.sound) soundSource.Play();
-            Debug.Log("A " + aCount);
             lastPressed = KeyCode.A;
         }
         else if(Input.GetKeyDown(KeyCode.D) && lastPressed != KeyCode.D) {
             dCount++;
 			if (Manager.Instance.sound)
 				soundSource.Play();
-            Debug.Log("D " + dCount);
             lastPressed = KeyCode.D;
         } else if (Input.GetKeyDown(KeyCode.W)) {
             aCount++;

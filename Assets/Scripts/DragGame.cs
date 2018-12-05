@@ -11,9 +11,12 @@ public class DragGame : MonoBehaviour {
     public int objectsInBowl = 0;
 	private float time = 10;
     private bool win = false;
-
-    void Update()
-    {
+	
+	void Start(){
+            Manager.Instance.successCurrentGame = 0;
+	}
+    
+	void Update() {
 		if (!win && Manager.Instance.counter < time)
 		{
             MoveObjects();

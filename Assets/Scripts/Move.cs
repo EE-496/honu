@@ -12,6 +12,7 @@ public class Move : MonoBehaviour {
 
     void Start() {
         startPos = transform.position;
+        Manager.Instance.successCurrentGame = 0;
     }
 
     void Update() {

@@ -8,22 +8,16 @@ public class Drag : MonoBehaviour {
     bool followingModeOn = false;
     bool move = true;
 
-    void OnMouseDown()
-    {
-        if(move)
-            followingModeOn = true;
+    void OnMouseDown(){
+        if(move) followingModeOn = true;
     }
 
-    void OnMouseUp()
-    {
-        if(move)
-            followingModeOn = false;
+    void OnMouseUp() {
+        if(move) followingModeOn = false;
     }
 
-    void Update()
-    {
-        if (followingModeOn)
-        {
+    void Update() {
+        if (followingModeOn) {
             float x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
             transform.position = new Vector2(x, x);
         }

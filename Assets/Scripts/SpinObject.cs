@@ -31,6 +31,7 @@ public class SpinObject : MonoBehaviour {
 		interfaceText.text = rotationsToWin.ToString();
 		if (Manager.Instance.music)
 			musicSource.Play();
+		Manager.Instance.successCurrentGame = 0;
 	}
 
 	// Update is called once per frame

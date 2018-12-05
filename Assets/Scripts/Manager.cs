@@ -32,16 +32,16 @@ public class Manager : Singleton<Manager> {
 		    Game.current.highScore += 1;
             counter = 0;
             timeForGame -= 0.1f;
-            successCurrentGame = 0;
 		    SceneManager.LoadScene(games[UnityEngine.Random.Range(0, games.Length)]);
-        } else if((successCurrentGame == 0 && counter >= Constants.timeForGame) && scene.name != "MainMenu" && scene.name != "DuelMode" && scene.name != "GameOver" && scene.name != "Winner") {
-			SceneManager.LoadScene("GameOver");
-		} else if((scene.name == "GameOver" || scene.name == "Winner") && counter >= Constants.timeForGame){
+        } else if((scene.name == "GameOver" || scene.name == "Winner") && counter >= Constants.timeForGame){
             counter = 0;
             timeForGame = 4.5f;
             SceneManager.LoadScene("MainMenu");
-        } else if(scene.name == "MainMenu" || scene.name == "Duel Mode") {
+        } else if(scene.name == "MainMenu" || scene.name == "DuelMode") {
             counter = 0;
-        }
+        } else if(successCurrentGame == 0 && counter >= Constants.timeForGame) {
+            counter = 0;
+			SceneManager.LoadScene("GameOver");
+		} 
 	}
  }
