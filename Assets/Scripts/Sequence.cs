@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class Sequence : MonoBehaviour {
 	public int sequenceLength;
 	public Text gameString;
+	public GameObject checkmark;
+	public Transform canvasTransfrom;
 
 	private int progressInSequence = 0;
 	private List<char> sequence = new List<char>();
@@ -25,10 +27,6 @@ public class Sequence : MonoBehaviour {
 		readInput();
 		if(checkSequence()){
             Manager.Instance.successCurrentGame = 1;
-			Game.current.highScore += 1;
-			Debug.Log("Win!");
-        } else if(Manager.Instance.counter >= Constants.timeForGame && Manager.Instance.successCurrentGame != 1){
-            SceneManager.LoadScene("GameOver");
         }
 	}
 
@@ -41,12 +39,24 @@ public class Sequence : MonoBehaviour {
 	void readInput() {
 		if (Input.GetKeyDown(KeyCode.W) && sequence[progressInSequence] == 'w') {
 			progressInSequence++;
+			GameObject newObject = GameObject.Instantiate(checkmark, canvasTransfrom);
+			RectTransform rt = newObject.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector3(-240 + (60*progressInSequence), -150, 0);
         } else if (Input.GetKeyDown(KeyCode.A) && sequence[progressInSequence] == 'a') {
 			progressInSequence++;
+			GameObject newObject = GameObject.Instantiate(checkmark, canvasTransfrom);
+			RectTransform rt = newObject.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector3(-240 + (60*progressInSequence), -150, 0);
         } else if (Input.GetKeyDown(KeyCode.S) && sequence[progressInSequence] == 's') {
 			progressInSequence++;
+			GameObject newObject = GameObject.Instantiate(checkmark, canvasTransfrom);
+			RectTransform rt = newObject.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector3(-240 + (60*progressInSequence), -150, 0);
         } else if (Input.GetKeyDown(KeyCode.D) && sequence[progressInSequence] == 'd') {
 			progressInSequence++;
+			GameObject newObject = GameObject.Instantiate(checkmark, canvasTransfrom);
+			RectTransform rt = newObject.GetComponent<RectTransform>();
+			rt.anchoredPosition = new Vector3(-240 + (60*progressInSequence), -150, 0);
         }
 	}
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeper : MonoBehaviour {
 	public GameObject ball;
@@ -13,6 +14,7 @@ public class ScoreKeeper : MonoBehaviour {
 	private Collider2D goalB;
 	private int scoreA = 0; // Player A's Score
 	private int scoreB = 0; // Player B's Score
+	private int goalsToWin = 1;
 
 	private bool showText = false, goalScored = false;
 	private float currentTime = 0.0f, executedTime = 0.0f, timeToWait = 2.0f;
@@ -38,8 +40,12 @@ public class ScoreKeeper : MonoBehaviour {
 				goalScored = false;
 				this.transform.position = Vector2.zero;
 				this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-				// this.GetComponent<Rigidbody2D>().angularVelocity = Vector2.zero;
 			}
+		}
+		if(scoreA == goalsToWin) {
+			SceneManager.LoadScene("Winner");
+		} else if (scoreB == goalsToWin) {
+			SceneManager.LoadScene("GameOver");
 		}
 	}
 

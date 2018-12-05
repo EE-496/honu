@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class ProgressBar : MonoBehaviour{
-	private float time = Constants.timeForGame; // total seconds to fill up progress bar
+	private float time = Manager.Instance.timeForGame; // total seconds to fill up progress bar
 	public float progress; // value between 0 and approximately 1
 	public Vector2 position = new Vector2(20, 50); // position of the progress bar
 	public Vector2 size = new Vector2(10, 10); // total length/width of progress bar

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DuelMode.unity
     guid: b7354108fbdb9492082ecdad78f0d6b9
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: ff4037825af9848278d904e8379e5af2
   m_configObjects: {}

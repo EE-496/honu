@@ -19,7 +19,7 @@ public class DragGame : MonoBehaviour {
             MoveObjects();
         } else if (win || objectsInBowl == 3) {
             Debug.Log("You Win!");
-    		Manager.Instance.successCurrentGame += 1;
+    		Manager.Instance.successCurrentGame = 1;
             enabled = false;
         } else {
 			Debug.Log("You Lose");

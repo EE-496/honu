@@ -9,7 +9,11 @@ public class StartButton : MonoBehaviour {
 
 	public void changeScene(string sceneName) {
 		Game.current.highScore += 1;
-		SceneManager.LoadScene(Manager.Instance.games[UnityEngine.Random.Range(0, Manager.Instance.games.Length)]);
+		if(sceneName == "DuelMode") { 
+			SceneManager.LoadScene("DuelMode");
+			Manager.Instance.counter = 0;
+		}
+		else SceneManager.LoadScene(Manager.Instance.games[UnityEngine.Random.Range(0, Manager.Instance.games.Length)]);
 	}
 
 	void Start() {
