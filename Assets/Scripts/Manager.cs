@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 static class Constants {
-    public const int miniGameCount = 6;
+    public const int miniGameCount = 7;
     public const float timeForGame = 5.0f;
 }
 
@@ -17,7 +17,7 @@ public class Manager : Singleton<Manager> {
     public bool music = true;
     public bool sound = true;
     public readonly string[] games = {"DragGame", "Drawing",
-     "SequenceGame", "SpinningGame", "SwatTheFly", "Timing"};
+     "SequenceGame", "SpinningGame", "SwatTheFly", "Timing", "MashingGame"};
 
 	void Start() {
 		counter = Time.timeSinceLevelLoad;
@@ -34,6 +34,7 @@ public class Manager : Singleton<Manager> {
         } else if(counter >= Constants.timeForGame && scene.name != "MainMenu") {
             successCurrentGame = 0;
 			SceneManager.LoadScene("GameOver");
+			SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 		}
 	}
  }

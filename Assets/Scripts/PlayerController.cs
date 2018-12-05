@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public int successCount;
     private Rigidbody2D rb2d;
-	public AudioClip musicClip;
-	public AudioSource musicSource;
     public AudioClip soundClip;
     public AudioSource soundSource;
 
@@ -17,9 +15,7 @@ public class PlayerController : MonoBehaviour {
     private int dCount;
 
     void Start(){
-		musicSource.clip = musicClip;
         soundSource.clip = soundClip;
-        if(Manager.Instance.music) musicSource.Play();
 		rb2d = GetComponent<Rigidbody2D>();
         aCount = dCount = 0;
         Manager.Instance.activeMiniGame = Random.Range(0, Constants.miniGameCount);

@@ -17,7 +17,7 @@ public class SpinObject : MonoBehaviour {
     private float glPrFltCurrentRotation;
 	private float glPrFloatRotation;
 	private float glPrFltQuarterRotation;
-    private float time = 10;
+    private float time = 8;
 
 
 	void Start()

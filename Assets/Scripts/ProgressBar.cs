@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ProgressBar : MonoBehaviour{
 	private float time = Constants.timeForGame; // total seconds to fill up progress bar
@@ -23,10 +24,14 @@ public class ProgressBar : MonoBehaviour{
 	}
 
 	void OnGUI() {
-		// draw the background
-		GUI.DrawTexture(new Rect(position.x, position.y, size.x, size.y), progress_empty_Image);
-		// fill with appropriate progress
-        GUI.DrawTexture(new Rect(position.x, position.y, size.x * (1-progress), size.y), progress_full_Image);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "MainMenu")
+        {
+            // draw the background
+            GUI.DrawTexture(new Rect(position.x, position.y, size.x, size.y), progress_empty_Image);
+            // fill with appropriate progress
+            GUI.DrawTexture(new Rect(position.x, position.y, size.x * (1 - progress), size.y), progress_full_Image);
+        }
 	}
 
 }

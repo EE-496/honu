@@ -19,17 +19,17 @@ public class Music : MonoBehaviour {
 
 	void TaskOnClick (Button btn1)
 	{
-        if (!Manager.Instance.music)
-            source.Play();
-
         Manager.Instance.music = !Manager.Instance.music;
+
         if(Manager.Instance.music) {
             Debug.Log("Music turned on!");
             btn1.GetComponentInChildren<Text>().text = "Turn Music off";
+            source.Play();
         }
         else {
 			Debug.Log("Music turned off!");
             btn1.GetComponentInChildren<Text>().text = "Turn Music on";
+            source.Pause();
 		}
 	}
 }
