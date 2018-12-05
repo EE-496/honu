@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: (Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   broadcast: 1
-  graphModel: {fileID: 4900000, guid: 70de4a9289c8e4afc923a16c082e402f, type: 3}
+  graphModel: {fileID: 4900000, guid: 8caefdd4d28624babacb85b241ac05aa, type: 3}
   graphScope: 
   graphPlaceholders: []
   BatchSizePlaceholderName: batch_size
@@ -1584,8 +1584,8 @@ GameObject:
   - component: {fileID: 1143785002}
   - component: {fileID: 1143785001}
   - component: {fileID: 1143785000}
-  - component: {fileID: 1143785003}
   - component: {fileID: 1143785004}
+  - component: {fileID: 1143785003}
   m_Layer: 0
   m_Name: PersonA
   m_TagString: Untagged
@@ -1651,15 +1651,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1143784999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48740807176b1a3448c5ee8dce45bc5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3692865335c664f4284bcf4ed1d9d6e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
   successCount: 0
-  musicClip: {fileID: 8300000, guid: 094b902faa9234db581a6570bf94a390, type: 3}
-  musicSource: {fileID: 1561080843}
-  soundClip: {fileID: 8300000, guid: 14bdda8644034463cb04c65dd5d7313b, type: 3}
-  soundSource: {fileID: 213692364}
 --- !u!114 &1143785004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1671,7 +1667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68b4e69913ac49e7aac426d0b1cdc8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brain: {fileID: 1359542608}
+  brain: {fileID: 0}
   agentParameters:
     agentCameras: []
     maxStep: 0
@@ -2278,7 +2274,7 @@ MonoBehaviour:
     - 
     - 
     vectorActionSpaceType: 1
-  brainType: 2
+  brainType: 3
   CoreBrains:
   - {fileID: 689220668}
   - {fileID: 1852883577}

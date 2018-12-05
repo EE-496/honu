@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Drag : MonoBehaviour {
+    public bool success = false;
 
     bool followingModeOn = false;
     bool move = true;
@@ -29,6 +30,7 @@ public class Drag : MonoBehaviour {
         if(transform.position.y < -4.0){
             move = false;
             followingModeOn = false;
+            success = true;
         }
     }
 }

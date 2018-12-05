@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 710636766}
   - component: {fileID: 710636765}
   - component: {fileID: 710636764}
+  - component: {fileID: 710636767}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -237,6 +238,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &710636767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 710636763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc38bc1f40c0b43939e8cb26bc8a375b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineA: {fileID: 818766761}
+  LineB: {fileID: 1502480962}
 --- !u!1 &818766760
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68497fd224d7b40dc83705cad25295e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  success: 0
 --- !u!212 &818766762
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -337,53 +352,52 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &932856942
-Prefab:
+--- !u!1 &1389730125
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -143.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4680632277523778, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114650443379212102, guid: 451ef2193a90d4501969c533d0b92660,
-        type: 2}
-      propertyPath: musicSource
-      value: 
-      objectReference: {fileID: 434033985}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 451ef2193a90d4501969c533d0b92660, type: 2}
-  m_IsPrefabAsset: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389730127}
+  - component: {fileID: 1389730126}
+  m_Layer: 0
+  m_Name: ProgressBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1389730126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1389730125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3ecc1b183e24f439b768bee71321ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress: 0
+  position: {x: 20, y: 40}
+  size: {x: 200, y: 20}
+  progress_empty_Image: {fileID: 2800000, guid: 65cde58f2b08a476ca36fed2c7d4cafb,
+    type: 3}
+  progress_full_Image: {fileID: 2800000, guid: 62a0737ea31104c1ea10f82586d879a9, type: 3}
+--- !u!4 &1389730127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1389730125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.04, y: 4.79, z: 0}
+  m_LocalScale: {x: 1.0266, y: 1.0266, z: 1.0266}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1502480961
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1502480966}
   - component: {fileID: 1502480965}
-  - component: {fileID: 1502480964}
   - component: {fileID: 1502480963}
   - component: {fileID: 1502480962}
   m_Layer: 0
@@ -414,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563355d3bd70743d894bb57bbf4ac6b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  success: 0
 --- !u!65 &1502480963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -426,17 +440,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1502480964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1502480961}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68497fd224d7b40dc83705cad25295e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1502480965
 SpriteRenderer:
   m_ObjectHideFlags: 0

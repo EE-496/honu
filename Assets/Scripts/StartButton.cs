@@ -9,17 +9,11 @@ public class StartButton : MonoBehaviour {
 
 	public void changeScene(string sceneName) {
 		Game.current.highScore += 1;
-        string nextScene = Manager.Instance.games[UnityEngine.Random.Range(0, Manager.Instance.games.Length)]; 
-        GameObject MusicManager = GameObject.Find("MusicManager");
-        GameObject Music = GameObject.Find("Music");
-        GameObject ProgressBar = GameObject.Find("ProgressBar");
-		DontDestroyOnLoad(ProgressBar);
-		DontDestroyOnLoad(Music);
-		DontDestroyOnLoad(MusicManager);
-        SceneManager.LoadScene(nextScene);
-        SceneManager.MoveGameObjectToScene(MusicManager, SceneManager.GetSceneByName(nextScene));
-        SceneManager.MoveGameObjectToScene(Music, SceneManager.GetSceneByName(nextScene));
-        SceneManager.MoveGameObjectToScene(ProgressBar, SceneManager.GetSceneByName(nextScene));
+		if(sceneName == "DuelMode") { 
+			SceneManager.LoadScene("DuelMode");
+			Manager.Instance.counter = 0;
+		}
+		else SceneManager.LoadScene(Manager.Instance.games[UnityEngine.Random.Range(0, Manager.Instance.games.Length)]);
 	}
 
 	void Start() {

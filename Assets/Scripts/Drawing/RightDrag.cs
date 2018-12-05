@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RightDrag : MonoBehaviour {
 
+    public bool success = false;
     bool followingModeOn = false;
     bool move = true;
 
@@ -26,10 +27,10 @@ public class RightDrag : MonoBehaviour {
             float x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
             transform.position = new Vector2(x, -x);
         }
-        if (transform.position.y < -4.0)
-        {
+        if (transform.position.y < -4.0) {
             move = false;
             followingModeOn = false;
+            success = true;
         }
     }
 

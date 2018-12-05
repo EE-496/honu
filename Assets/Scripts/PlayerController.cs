@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
     public float speed;
     public int successCount;
+    public float total = 0;
     private Rigidbody2D rb2d;
     public AudioClip soundClip;
     public AudioSource soundSource;
@@ -30,9 +31,6 @@ public class PlayerController : MonoBehaviour {
         if(ReadMashedKeys(successCount)){
             Manager.Instance.successCurrentGame = 1;
         }
-        else if(Manager.Instance.counter >= Constants.timeForGame){
-            SceneManager.LoadScene("GameOver");
-        }
     }
 
     bool ReadMashedKeys(int targetPresses) {
@@ -51,8 +49,9 @@ public class PlayerController : MonoBehaviour {
         } else if (Input.GetKeyDown(KeyCode.W)) {
             aCount++;
         }
+        total = aCount + dCount;
 
-        if(aCount + dCount >= targetPresses){
+        if(total >= targetPresses){
             return true;
         }
         return false;

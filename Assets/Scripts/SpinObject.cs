@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpinObject : MonoBehaviour {
     
@@ -10,6 +11,7 @@ public class SpinObject : MonoBehaviour {
 	public bool rotate { get; set; }
 	public AudioClip musicClip;
 	public AudioSource musicSource;
+	public Text interfaceText;
 
     private int currentRotations;
     private float glPrFltDeltaRotation;
@@ -17,7 +19,6 @@ public class SpinObject : MonoBehaviour {
     private float glPrFltCurrentRotation;
 	private float glPrFloatRotation;
 	private float glPrFltQuarterRotation;
-    private float time = 8;
 
 
 	void Start()
@@ -27,6 +28,7 @@ public class SpinObject : MonoBehaviour {
 		rotate = true;
 
 		musicSource.clip = musicClip;
+		interfaceText.text = rotationsToWin.ToString();
 		if (Manager.Instance.music)
 			musicSource.Play();
 	}
@@ -35,15 +37,8 @@ public class SpinObject : MonoBehaviour {
 	void Update()
 	{
         RotateThis();
-        if (rotate)
-        {
+        if (rotate) {
             CountRotations();
-        }
-
-        if (Manager.Instance.counter >= time) 
-        {
-            rotate = false;
-            Debug.Log("You Lose");
         }
 	}
 
@@ -58,10 +53,10 @@ public class SpinObject : MonoBehaviour {
 		{
 			glPrFloatRotation -= 360;
             currentRotations -= 1;
-            Debug.Log(currentRotations);
+			interfaceText.text = currentRotations.ToString();
             if (currentRotations <= 0)
 			{
-				Manager.Instance.successCurrentGame += 1;
+				Manager.Instance.successCurrentGame = 1;
                 rotate = false;
 			}
 		}

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour {
 	public GameObject moveObject;
+	public Sprite Checkmark;
+	public int clicks = 0;
 
 	private Rigidbody2D rb2D;
 	private bool clicked = false;
-	private int clicks = 0;
 	// Use this for initialization
 	void Start () {
 		rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -31,8 +32,8 @@ public class MoveObject : MonoBehaviour {
 
 	void OnMouseDown() {
 		if(!clicked) {
-			clicks++;
-    		if(clicks == 3) Manager.Instance.successCurrentGame += 1;
+			clicks = 1;
+			moveObject.GetComponent<SpriteRenderer>().sprite = Checkmark;
 			clicked = true;
 		}
 	}

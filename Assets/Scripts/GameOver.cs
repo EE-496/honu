@@ -14,7 +14,6 @@ public class GameOver : MonoBehaviour {
 	void Update () {
 		if(Manager.Instance.counter >= Constants.timeForGame){
             SceneManager.LoadScene("MainMenu");
-            Debug.Log("You Lose!");
         }
 	}
 }

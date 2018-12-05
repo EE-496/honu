@@ -10,34 +10,22 @@ public class Move : MonoBehaviour {
     private bool slide = true;
     // Use this for initialization
 
-    void Start()
-    {
+    void Start() {
         startPos = transform.position;
     }
 
-    void Update()
-    {
-        if (slide)
-        {
+    void Update() {
+        if (slide) {
             Vector2 v = startPos;
             v.x += delta * Mathf.Sin(Time.time * speed);
             transform.position = v;
         }
-        if (Input.anyKey)
-        {
+        if (Input.anyKey) {
             slide = false;
         }
-        if (!slide)
-        {
-            if (transform.position.x < 1.52 && transform.position.x > -2.98)
-            {
-                Debug.Log("Win");
-                //move to win screen
-            }
-            else
-            {
-                Debug.Log("Lose");
-                //move to lose screen
+        if (!slide){
+            if (transform.position.x < 1.52 && transform.position.x > -2.98){
+                Manager.Instance.successCurrentGame = 1;
             }
         }
     }
